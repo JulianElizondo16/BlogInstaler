@@ -33,6 +33,7 @@ class BlogServiceProvider extends ServiceProvider
             __DIR__ . '/../database/seeders' => database_path('seeders'),
         ], 'Seeders');
 
+
         /* ------------------------CONFIG-------------------------------------- */
         $this->publishes([
             __DIR__ . '/../config' => config_path('config'),
@@ -43,14 +44,20 @@ class BlogServiceProvider extends ServiceProvider
             __DIR__ . '/Controllers' => app_path('/Http/Controllers'),
         ], 'BlogController');
         $this->publishes([
-            __DIR__ . '/Request' => app_path('/Http/Request'),
+            __DIR__ . '/Requests' => app_path('/Http/Requests'),
         ], 'BlogRequests');
         $this->publishes([
-            __DIR__ . '/Livewire' => app_path('/Livewire'),
+            __DIR__ . '/Livewire' => app_path('Livewire'),
         ], 'LivewireBlog');
         $this->publishes([
-            __DIR__ . '/Console' => app_path('/Console'),
+            __DIR__ . '/Console' => app_path('Console'),
         ], 'ConsoleBlog');
+        $this->publishes([
+            __DIR__ . '/Policies' => app_path('Policies'),
+        ], 'PoliciesBlog');
+        $this->publishes([
+            __DIR__ . '/Observers' => app_path('Observers'),
+        ], 'ObserversBlog');
         /* 
         ------------------------Models-------------------------------------- */
         /* Llamada de los Modelos */
@@ -77,14 +84,11 @@ class BlogServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/routes' => base_path('routes'),
         ], 'RoutesBlog');
+        $this->publishes([
+            __DIR__ . '/storage' => base_path('storage'),
+        ], 'StorageBlog');
         /* 
         ------------------------Policies y Observers-------------------------------------- */
         /*  Llamada de rutas */
-        $this->publishes([
-            __DIR__ . '/Policies' => base_path('Policies'),
-        ], 'PoliciesBlog');
-        $this->publishes([
-            __DIR__ . '/Observers' => base_path('Observers'),
-        ], 'ObserversBlog');
     }
 }
