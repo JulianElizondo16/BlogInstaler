@@ -36,7 +36,7 @@ class BlogServiceProvider extends ServiceProvider
 
         /* ------------------------CONFIG-------------------------------------- */
         $this->publishes([
-            __DIR__ . '/../config' => config_path('config'),
+            __DIR__ . '/../config' => config_path(''),
         ], 'Migraciones');
         /* ------------------------Controlladores-------------------------------------- */
         /* Llamada de controladores */
@@ -58,6 +58,9 @@ class BlogServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/Observers' => app_path('Observers'),
         ], 'ObserversBlog');
+        $this->publishes([
+            __DIR__ . '/Providers' => app_path('Providers'),
+        ], 'ProvidersBlog');
         /* 
         ------------------------Models-------------------------------------- */
         /* Llamada de los Modelos */

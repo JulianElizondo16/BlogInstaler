@@ -99,7 +99,7 @@
                 </li>
                 <li class="nav-item">
                     <!-- Este HREF lo que hace el route es llamar a la ruta del controlador, mejor dicho el url -->
-                    <a class="nav-link" href="{{ route('comentarios.home') }}">Comentarios</a>
+                    <a class="nav-link" href="#">Comentarios</a>
                 </li>
 
             </ul>
@@ -119,7 +119,7 @@
                     {{-- En el form va la vinculacion de los datos, necesita tener el metodo "POST" y en el 'action' estaria yendo la ruta del controlador. --}}
 
                     {{-- Esta ruta me esta devolviendo la ruta de GenerarComentarios --}}
-                    <form class="container mt-4" action="{{ route('comentarios.generar') }}" method="POST">
+                    <form class="container mt-4" action="#" method="POST">
 
                         @csrf {{-- GENERA UN TOKEN PARA QUE PUEDA FUNCIONAR. --}}
 
@@ -189,15 +189,15 @@
                                     </div>
 
                                     <!--
-                              Dropdown menu, show/hide based on menu state.
-                  
-                              Entering: "transition ease-out duration-100"
-                                From: "transform opacity-0 scale-95"
-                                To: "transform opacity-100 scale-100"
-                              Leaving: "transition ease-in duration-75"
-                                From: "transform opacity-100 scale-100"
-                                To: "transform opacity-0 scale-95"
-                            -->
+                                              Dropdown menu, show/hide based on menu state.
+                                  
+                                              Entering: "transition ease-out duration-100"
+                                                From: "transform opacity-0 scale-95"
+                                                To: "transform opacity-100 scale-100"
+                                              Leaving: "transition ease-in duration-75"
+                                                From: "transform opacity-100 scale-100"
+                                                To: "transform opacity-0 scale-95"
+                                            -->
                                     <div x-show="open" x-on:click.away="open = false"
                                         class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                                         role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
@@ -224,8 +224,10 @@
                             {{-- Y SI NO ESTA AUTENTIFICADO HACER ESO --}}
                         @else
                             <div>
-                              <a href="{{route('login')}}"><button  type="button" class="btn btn-primary me-3">Iniciar sesion</button></a>
-                              <a href="{{route('register')}}"><button type="button" class="btn btn-primary me-3">Registrar</button></a>
+                                <a href="{{ route('login') }}"><button type="button" class="btn btn-primary me-3">Iniciar
+                                        sesion</button></a>
+                                <a href="{{ route('register') }}"><button type="button"
+                                        class="btn btn-primary me-3">Registrar</button></a>
                             </div>
                         @endauth
 
@@ -233,7 +235,7 @@
                 </div>
 
                 {{-- ACA SON LOS BOTONES QUE YA TENEMOS PREDETERMINADOS, PERO OCUPAMOS HACER OTRAS COSAS --}}
-                
+
             </div>
         </div>
         </div>
